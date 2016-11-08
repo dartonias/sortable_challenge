@@ -102,7 +102,7 @@ def add_metadata(products):
 		except KeyError:
 			Lfamily = []
 		# List of all the string segments corresponding to a product
-		p["Lfullnames"] =  Lfamily + Lmodel
+		p["Lfullnames"] = [p["Lmanufacturer"]] + Lfamily + Lmodel
 		# From the above, we generate a regex pattern for matching the product
 		pattern  = ''
 		for parts in p["Lfullnames"]:
