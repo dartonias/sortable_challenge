@@ -6,6 +6,8 @@ To execute the code, simply run
 
 from the main directory. It will produce `results.txt` that will contain the JSON record of results.
 
+Without the optimization flag, `hr_results.txt` is also generated, as a more human readable version of the results, and a set of test cases in `labeled_listings.txt` is also checked, with errors printed to the console (on stdout).
+
 ## Files
 ### sortable_challenge.py  
 main python file, only relies on the "re" and "json" libraries
