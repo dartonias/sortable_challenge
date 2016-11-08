@@ -17,6 +17,9 @@ When we generate the regulad expression for searching through the listing, the r
 The reason this is not obviously needed or not, is because the family name of the product is sometimes omitted or present, but there are cases of identical products (by manufacturer and model) that are only differentiated by the family name (i.e. Olympus Stylus and mju or Tough series), and so a more strict interpretation is necessary.
 For reducing false positives we include it, but whether it is necessary or not is something that can be bette tested on a large set of labeled data where the aggregate false positives and false negatives can be measured.
 
+Finally, a more thorough approach would be to search through every product rather than until the first match, and record all matches and then choose among them, but given the current search metric is pass/fail, there would be no meaningful comparison between different positive results.
+If we modified the search metric to provide a score for positive events, we could then consider comparing them, but this is again something better suited to having a large labeled data set before exploring, as we need to be mindful of the possibility that we are examining a listing for which we have no product in our database.
+
 ## Files
 ### sortable_challenge.py  
 main python file, only relies on the "re" and "json" libraries
