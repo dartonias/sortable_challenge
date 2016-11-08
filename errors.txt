@@ -1,4 +1,19 @@
-Unsure if this case is an error, but it's very subtle, perhaps a version 2(II) if the product, but separated by a space
+Unsure if this case is an error, but it's very subtle, perhaps a version 2(II) if the product, but separated by a space.
 
 {"title":"Fujifilm - FinePix Z800 EXR II - Appareil photo numérique - 12 Mpix - Noir","manufacturer":"FUJIFILM","currency":"EUR","price":"192.00"}
 {"product_name":"Fujifilm_FinePix_Z800EXR","manufacturer":"Fujifilm","model":"Z800EXR","family":"FinePix","announced-date":"2010-07-20T20:00:00.000-04:00"}
+
+An extra word "Zoom" has been added in the description (which could possibly represent a model variant). Looking online shows that this is in fact the same camera, but searching this was no trivial case, and trying to match it in geenral may case many false positives.
+
+{"title":"CASIO Exilim Zoom EX-Z800 - silver + Ultra-compact Camera Case - 9.5x2.7x6.5 cm","manufacturer":"CASIO","currency":"GBP","price":"131.99"}
+{"product_name":"Casio_Exilim_EX-Z800","manufacturer":"Casio","model":"EX-Z800","family":"Exilim","announced-date":"2010-08-02T20:00:00.000-04:00"}
+
+**FIXED** The family and model have been reversed -- we could add this as a possible search string to remove this case, since in general the order might be ambigious.
+
+{"title":"Sony DSC-W220 Cyber-Shot Digital Camera 12.1MP 4x Optical Zoom 2.7 inch LCD (Silver)","manufacturer":"Sony","currency":"GBP","price":"149.99"}
+{"product_name":"Sony_Cyber-shot_DSC-W220","manufacturer":"Sony","model":"DSC-W220","family":"Cyber-shot","announced-date":"2009-01-07T19:00:00.000-05:00"}
+
+Below case is a possible error, but it is not obvious with searching through online spec pages whether these two names can refer to the same devices or not.
+
+{"title":"Olympus E-PL2 Compact System Camera - Silver (includes M.ZUIKO DIGITAL 14-42mm 1:3.5-5.6 II Silver lens)","manufacturer":"Olympus Optical Co. (UK) Ltd","currency":"GBP","price":"464.95"}
+{"product_name":"Olympus-E-PL2","manufacturer":"Olympus","model":"PEN E-PL2","announced-date":"2010-12-31T19:00:00.000-05:00"}

@@ -66,7 +66,7 @@ def simplify_string(str):
 	# Code for simplifying the listing
 	temp = str.lower()
 	# Characters to ignore
-	ignore_chars = ['-','+','(',')']
+	ignore_chars = ['-','+','(',')','/']
 	for c in ignore_chars:
 		temp = temp.replace(c,'')
 	# We also remove additional spaces after removing the extra characters
@@ -109,7 +109,15 @@ def add_metadata(products):
 			pattern += parts + r'\W?'
 		# We require a trailing nonalphanumeric, to avoid variants
 		pattern += r'\W'
-		p["re_pattern"] = re.compile(pattern)
+		p["re_pattern"] = [re.compile(pattern)]
+		# Second set for a reversed order of family and model
+		p["Lfullnames2"] = [p["Lmanufacturer"]] + Lmodel + Lfamily
+		pattern  = ''
+		for parts in p["Lfullnames2"]:
+			pattern += parts + r'\W?'
+		# We require a trailing nonalphanumeric, to avoid variants
+		pattern += r'\W'
+		p["re_pattern"] = p["re_pattern"] + [re.compile(pattern)]
 		
 def assign_to_results(listing, products, results, unmatched):
 	# results : passed in by reference, so we can modify it here
@@ -125,10 +133,13 @@ def assign_to_results(listing, products, results, unmatched):
 		# This should never be false for a correctly labeled product
 		if p["Lmanufacturer"] in listing_manufacturer:
 			# Now we use the compiled regex pattern to search the simplified title
-			if p["re_pattern"].search(listing_title):
-				results[p["product_name"]].append(listing)
-				found = True
-				break
+			for pattern in p["re_pattern"]:
+				if pattern.search(listing_title):
+					results[p["product_name"]].append(listing)
+					found = True
+					break
+		if found:
+			break
 	# Catch all the unmatched listings for debugging
 	if __debug__:
 		if not found:
