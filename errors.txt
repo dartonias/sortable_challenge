@@ -1,0 +1,4 @@
+Unsure if this case is an error, but it's very subtle, perhaps a version 2(II) if the product, but separated by a space
+
+{"title":"Fujifilm - FinePix Z800 EXR II - Appareil photo numérique - 12 Mpix - Noir","manufacturer":"FUJIFILM","currency":"EUR","price":"192.00"}
+{"product_name":"Fujifilm_FinePix_Z800EXR","manufacturer":"Fujifilm","model":"Z800EXR","family":"FinePix","announced-date":"2010-07-20T20:00:00.000-04:00"}
