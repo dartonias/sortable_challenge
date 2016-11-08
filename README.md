@@ -1,12 +1,19 @@
-# Files
+# Running the code
 
-## sortable_challenge.py  
+To execute the code, simply run
+
+`python -O sortable_challenge.py`
+
+from the main directory. It will produce `results.txt` that will contain the JSON record of results.
+
+## Files
+### sortable_challenge.py  
 main python file, only relies on the "re" and "json" libraries
-## errors.txt  
+### errors.txt  
 list of border cases still to be (possibly) fixed; of course this is difficult to tell and only based on the human algorithm
-## labeled_listings.txt  
+### labeled_listings.txt  
 list of (human) labeled listings for the purpose of checking modifications to the algorithm on a set of known cases
-## listings.txt
+### listings.txt
 Provided JSON record of listings
-## products.txt
+### products.txt
 Provided JSON record of products
